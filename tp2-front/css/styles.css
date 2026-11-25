@@ -1,0 +1,1173 @@
+/*///////////////// AJUSTES GENERALES//////////////////*/
+:root {
+  --celeste-bandera: #74ACDF;
+  --celeste-oscuro: #1E4E79;
+  --celeste-suave: #EAF4FC;
+  --sol-dorado: #E5A93C;
+  --sol-dorado-hover: #D19324;
+  --blanco-puro: #FFFFFF;
+  --fondo-general: #F4F7FA;
+  --texto-principal: #162433;
+  --texto-secundario: #4A5D73;
+  --borde-suave: #D6E2EE;
+  --sombra-card: 0 4px 14px rgba(30, 78, 121, 0.08);
+  --sombra-hover: 0 10px 24px rgba(30, 78, 121, 0.16);
+  --radio-borde: 10px;
+  --transicion: all 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--fondo-general);
+  color: var(--texto-principal);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, .brand-logo {
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/*__________________Navegación Superior (Estilo W3Schools)____________________________*/
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  border-bottom: 4px solid var(--sol-dorado);
+  padding: 0 20px;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.btn-icon-menu {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--blanco-puro);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.brand-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.brand-text strong {
+  color: var(--sol-dorado);
+  font-weight: 800;
+}
+
+.main-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--blanco-puro);
+  transition: var(--transicion);
+}
+
+.nav-link:hover {
+  background-color: var(--celeste-bandera);
+  color: var(--texto-principal);
+}
+
+.nav-link.active {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+}
+
+.api-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.14);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--celeste-suave);
+  white-space: nowrap;
+}
+
+/*__________________Layout Principal y Sidebar (Estilo W3Schools)____________________________*/
+.workspace-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 62px);
+  width: 100%;
+}
+
+.sidebar-index {
+  width: 255px;
+  flex-shrink: 0;
+  background-color: var(--blanco-puro);
+  border-right: 1px solid var(--borde-suave);
+  position: sticky;
+  top: 62px;
+  height: calc(100vh - 62px);
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background-color: var(--celeste-suave);
+  border-bottom: 1px solid var(--borde-suave);
+}
+
+.sidebar-header h2 {
+  font-size: 1rem;
+  color: var(--celeste-oscuro);
+}
+
+.btn-close-sidebar {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/*__________________Navegación dentro del menú lateral (Mobile)____________________________*/
+.mobile-nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--borde-suave);
+  background-color: #FAFCFF;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--texto-principal);
+  transition: var(--transicion);
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--celeste-suave);
+  color: var(--celeste-oscuro);
+}
+
+.mobile-nav-link.active {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+}
+
+.sidebar-list {
+  padding: 10px 8px;
+}
+
+.sidebar-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: var(--transicion);
+}
+
+.sidebar-list li a:hover {
+  background-color: var(--celeste-suave);
+  color: var(--celeste-oscuro);
+  padding-left: 16px;
+}
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(16, 30, 46, 0.5);
+  z-index: 140;
+}
+
+.sidebar-backdrop.visible {
+  display: block;
+}
+
+.main-content {
+  flex: 1;
+  padding: 28px 32px 48px;
+  min-width: 0;
+}
+
+.pagina-vacia {
+  min-height: 55vh;
+}
+
+/*__________________Página de cultivos____________________________*/
+.cultivos-page {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.cultivos-page .hero-banner {
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, rgba(20, 58, 87, 0.96), rgba(43, 108, 176, 0.88)), url("../img/logo.svg") no-repeat 92% center / 230px, linear-gradient(125deg, var(--celeste-oscuro), var(--celeste-bandera));
+}
+
+.cultivos-page .hero-content {
+  max-width: 760px;
+}
+
+.cultivos-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: var(--sol-dorado);
+  color: var(--texto-principal);
+  font-weight: 700;
+  transition: var(--transicion);
+}
+
+.cultivos-cta:hover {
+  background: #f3c66f;
+  transform: translateY(-2px);
+}
+
+.cultivos-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 34px 0 20px;
+}
+
+.cultivos-intro h2 {
+  color: var(--celeste-oscuro);
+  font-size: 1.7rem;
+}
+
+.cultivos-intro > p {
+  max-width: 460px;
+  color: var(--texto-secundario);
+}
+
+.section-eyebrow {
+  color: var(--sol-dorado-hover);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.cultivos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cultivo-card {
+  min-height: 280px;
+  padding: 22px;
+  background: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-top: 4px solid var(--celeste-bandera);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--transicion);
+}
+
+.cultivo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-hover);
+}
+
+.cultivo-card-vid { border-top-color: #8b5b8e; }
+.cultivo-card-fruta { border-top-color: #d97554; }
+.cultivo-card-industrial { border-top-color: #6c9c61; }
+
+.cultivo-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: var(--celeste-suave);
+  color: var(--celeste-oscuro);
+  font-size: 1.25rem;
+}
+
+.cultivo-card-vid .cultivo-icon { background: #f4eaf5; color: #74447a; }
+.cultivo-card-fruta .cultivo-icon { background: #fff0e9; color: #b34e30; }
+.cultivo-card-industrial .cultivo-icon { background: #edf5e9; color: #4c7d41; }
+
+.cultivo-region {
+  color: var(--texto-secundario);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cultivo-card h3 {
+  margin: 5px 0 9px;
+  color: var(--celeste-oscuro);
+  font-size: 1.25rem;
+}
+
+.cultivo-card p {
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.cultivo-tipo {
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--celeste-oscuro);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.cultivos-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  background: var(--celeste-suave);
+  color: var(--texto-secundario);
+  font-size: 0.88rem;
+}
+
+.cultivos-note > i { color: var(--celeste-oscuro); margin-top: 3px; }
+.cultivos-note a { color: var(--celeste-oscuro); font-weight: 700; text-decoration: underline; }
+
+@media (max-width: 1000px) {
+  .cultivos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .cultivos-page .hero-banner { min-height: auto; background-size: auto, 150px, auto; background-position: center, right bottom, center; }
+  .cultivos-intro { align-items: flex-start; flex-direction: column; gap: 8px; margin-top: 26px; }
+  .cultivos-intro h2 { font-size: 1.45rem; }
+  .cultivos-grid { grid-template-columns: 1fr; }
+  .cultivo-card { min-height: 240px; }
+}
+
+/*__________________Portada / Buscador____________________________*/
+.hero-banner {
+  background: linear-gradient(125deg, var(--celeste-oscuro) 0%, #2B6CB0 55%, var(--celeste-bandera) 100%);
+  color: var(--blanco-puro);
+  border-radius: var(--radio-borde);
+  padding: 32px 28px;
+  border-left: 6px solid var(--sol-dorado);
+  margin-bottom: 20px;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.hero-banner h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-banner h1 span {
+  color: var(--sol-dorado);
+}
+
+.hero-banner p {
+  max-width: 720px;
+  color: #EDF6FD;
+  margin-bottom: 22px;
+}
+
+.controles-busqueda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.input-buscador {
+  flex: 1 1 290px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-buscador i {
+  position: absolute;
+  left: 14px;
+  color: var(--texto-secundario);
+}
+
+.input-buscador input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: inherit;
+}
+
+.select-categoria {
+  min-width: 220px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-weight: 600;
+  background-color: var(--blanco-puro);
+}
+
+/*__________________Barra de Estado y Grilla de Provincias____________________________*/
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  padding: 11px 16px;
+  margin-bottom: 22px;
+  font-size: 0.9rem;
+}
+
+.contador-resultados {
+  font-weight: 700;
+  color: var(--celeste-oscuro);
+}
+
+.provincias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-provincia {
+  background-color: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-top: 4px solid var(--celeste-bandera);
+  border-radius: var(--radio-borde);
+  padding: 20px;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: var(--transicion);
+}
+
+.card-provincia:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-hover);
+  border-top-color: var(--sol-dorado);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card-region {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background-color: var(--celeste-suave);
+  color: var(--celeste-oscuro);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.cultivo-box {
+  background-color: #FFFDF7;
+  border: 1px solid #F3DFB3;
+  border-left: 4px solid var(--sol-dorado);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.cultivo-label {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sol-dorado-hover);
+  margin-bottom: 4px;
+}
+
+.cultivo-nombre {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card-descripcion {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+.card-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--borde-suave);
+  font-size: 0.82rem;
+  color: var(--texto-secundario);
+}
+
+.badge-rubro {
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+
+.mensaje-vacio {
+  grid-column: 1 / -1;
+  background-color: var(--blanco-puro);
+  border: 1px dashed var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: 36px 20px;
+  text-align: center;
+}
+
+/*__________________Footer____________________________*/
+.site-footer {
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  border-top: 4px solid var(--sol-dorado);
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 34px 28px 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 28px;
+}
+
+.footer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--sol-dorado);
+  margin-bottom: 10px;
+}
+
+.footer-links h4,
+.footer-meta h4 {
+  font-size: 1rem;
+  color: var(--sol-dorado);
+  margin-bottom: 10px;
+}
+
+.footer-links li {
+  margin-bottom: 7px;
+}
+
+.footer-links a:hover {
+  color: var(--sol-dorado);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer-socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*=========================
+    Media Queries
+=========================*/
+/* Tablet horizontal */
+@media (max-width: 1080px) {
+  .provincias-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet vertical */
+@media (max-width: 768px) {
+  .btn-icon-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-links {
+    display: none;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+  }
+
+  .sidebar-index {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    z-index: 150;
+    transition: left 0.28s ease;
+  }
+
+  .sidebar-index.abierto {
+    left: 0;
+  }
+
+  .btn-close-sidebar {
+    display: inline-flex;
+  }
+
+  .provincias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobil 1 */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .main-content {
+    padding: 20px 16px 36px;
+  }
+
+  .hero-banner {
+    padding: 24px 18px;
+  }
+
+  .api-pill {
+    display: none;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.65rem;
+  }
+}
+
+/* Mobil 2 */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 16px 12px 32px;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.45rem;
+  }
+}
+
+/* Botón "Ver en el mapa" */
+.btn-mapa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background-color: var(--celeste-suave);
+  color: var(--celeste-oscuro);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-borde);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+.btn-mapa:hover {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+  border-color: var(--sol-dorado);
+}
+
+/* Acciones de la tarjeta y departamentos */
+.card-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-acciones .btn-mapa,
+.card-acciones .btn-deptos {
+  flex: 1 1 150px;
+}
+
+.btn-deptos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  border: 1px solid var(--celeste-oscuro);
+  border-radius: var(--radio-borde);
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.btn-deptos:hover {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+  border-color: var(--sol-dorado);
+}
+
+.panel-deptos {
+  background-color: var(--celeste-suave);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  color: var(--texto-secundario);
+}
+
+.panel-deptos[hidden] {
+  display: none;
+}
+
+.deptos-titulo {
+  font-weight: 700;
+  color: var(--celeste-oscuro);
+  margin-bottom: 8px;
+}
+
+.lista-deptos {
+  list-style: none;
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lista-deptos li {
+  background-color: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: var(--texto-principal);
+}
+
+.deptos-error {
+  color: #b3261e;
+}
+
+/*__________________Página de regiones (estilo W3Schools)____________________________*/
+.sidebar-list li a.active {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+  font-weight: 700;
+  padding-left: 16px;
+}
+
+.sidebar-list li a span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.regiones-page {
+  padding: 24px 28px 48px;
+}
+
+.tuto-contenido {
+  max-width: 980px;
+  background-color: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: 26px 32px 32px;
+  box-shadow: var(--sombra-card);
+}
+
+.tuto-contenido h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--celeste-oscuro);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.tuto-contenido h1 i {
+  color: var(--sol-dorado);
+  font-size: 1.7rem;
+}
+
+.tuto-contenido h2 {
+  color: var(--celeste-oscuro);
+  font-size: 1.5rem;
+  margin: 32px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--celeste-suave);
+}
+
+.tuto-contenido > p {
+  margin-bottom: 12px;
+}
+
+.tuto-breadcrumb {
+  color: var(--texto-secundario);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.tuto-lead {
+  font-size: 1.05rem;
+  color: var(--texto-principal);
+  margin: 14px 0;
+}
+
+/* Estado de la conexión con la API */
+.api-estado {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  margin-bottom: 14px;
+}
+
+.api-estado-ok { color: #2f7d4a; }
+.api-estado-error { color: #b3261e; }
+
+.btn-reintentar {
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.btn-reintentar:hover {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+}
+
+/* Botones Anterior / Siguiente */
+.tuto-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tuto-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: var(--transicion);
+}
+
+.tuto-btn:hover {
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+}
+
+/* Datos rápidos de la región */
+.tuto-datos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.tuto-datos > div {
+  background-color: var(--celeste-suave);
+  border: 1px solid var(--borde-suave);
+  border-top: 4px solid var(--celeste-bandera);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tuto-datos span {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-secundario);
+  margin-bottom: 2px;
+}
+
+.tuto-datos strong {
+  font-family: "Outfit", sans-serif;
+  color: var(--celeste-oscuro);
+  font-size: 1.05rem;
+}
+
+/* Cuadro de nota / dato curioso */
+.tuto-nota {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #FFF8E5;
+  border-left: 6px solid var(--sol-dorado);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin: 18px 0;
+}
+
+.tuto-nota > i {
+  color: var(--sol-dorado-hover);
+  margin-top: 4px;
+}
+
+/* Tablas */
+.tabla-scroll {
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+.tuto-tabla {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.tuto-tabla th {
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+.tuto-tabla td {
+  padding: 10px 12px;
+  border: 1px solid var(--borde-suave);
+  vertical-align: top;
+}
+
+.tuto-tabla tbody tr:nth-child(even) {
+  background-color: #F5F9FD;
+}
+
+.tuto-tabla tbody tr:hover {
+  background-color: var(--celeste-suave);
+}
+
+.tuto-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.8rem;
+  color: var(--texto-secundario);
+}
+
+.tuto-link {
+  color: var(--celeste-oscuro);
+  font-weight: 700;
+}
+
+.tuto-link i {
+  margin-right: 6px;
+  color: var(--sol-dorado-hover);
+}
+
+.tuto-link:hover {
+  text-decoration: underline;
+}
+
+/* Cultivos como etiquetas */
+.chips-cultivos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips-cultivos li {
+  background-color: var(--celeste-suave);
+  border: 1px solid var(--borde-suave);
+  color: var(--celeste-oscuro);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Cuadro "Ejemplo" con código */
+.tuto-ejemplo {
+  background-color: #EEF3F8;
+  border: 1px solid var(--borde-suave);
+  border-radius: 6px;
+  padding: 4px 18px 18px;
+  margin: 16px 0;
+}
+
+.tuto-ejemplo h3 {
+  color: var(--celeste-oscuro);
+  font-size: 1.15rem;
+  margin: 12px 0 10px;
+}
+
+.tuto-codigo {
+  background-color: var(--blanco-puro);
+  border: 1px solid var(--borde-suave);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.tuto-probar {
+  display: inline-block;
+  background-color: var(--sol-dorado);
+  color: var(--texto-principal);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: var(--transicion);
+}
+
+.tuto-probar:hover {
+  background-color: var(--celeste-oscuro);
+  color: var(--blanco-puro);
+}
+
+@media (max-width: 768px) {
+  .regiones-page { padding: 18px 14px 36px; }
+  .tuto-contenido { padding: 20px 18px 26px; }
+  .tuto-contenido h1 { font-size: 1.7rem; }
+  .tuto-datos { grid-template-columns: 1fr; }
+}

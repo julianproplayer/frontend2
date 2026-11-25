@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conocé algunos de los principales cultivos de Argentina y las regiones donde se producen." />
+  <title>Cultivos de Argentina — Somos Argentina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand-logo">
+        <img src="img/logo.svg" alt="" class="brand-logo-img" />
+        <span class="brand-text">Somos <strong>Argentina</strong></span>
+      </a>
+      <nav class="main-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Provincias</a>
+        <a href="cultivos.html" class="nav-link active" aria-current="page"><i class="fa-solid fa-wheat-awn"></i> Cultivos</a>
+        <a href="regiones.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> Regiones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content cultivos-page">
+    <section class="hero-banner">
+      <div class="hero-content">
+        <span class="hero-kicker"><i class="fa-solid fa-seedling"></i> Tierra productiva</span>
+        <h1>Cultivos que <span>alimentan</span> al país</h1>
+        <p>Del corazón de la región pampeana a los valles y montañas, cada zona aporta productos que forman parte de la identidad argentina.</p>
+        <a class="cultivos-cta" href="#cultivos-destacados">Explorar cultivos <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+    </section>
+
+    <section class="cultivos-intro" aria-labelledby="titulo-cultivos">
+      <div>
+        <span class="section-eyebrow">Producción nacional</span>
+        <h2 id="titulo-cultivos">Una diversidad de norte a sur</h2>
+      </div>
+      <p>El clima, el suelo y el trabajo de cada comunidad dan lugar a cultivos muy distintos. Estos son algunos de los más representativos.</p>
+    </section>
+
+    <section id="cultivos-destacados" class="cultivos-grid" aria-label="Cultivos destacados de Argentina">
+      <article class="cultivo-card cultivo-card-granos">
+        <div class="cultivo-icon"><i class="fa-solid fa-wheat-awn" aria-hidden="true"></i></div>
+        <span class="cultivo-region">Región pampeana</span>
+        <h3>Soja, maíz y trigo</h3>
+        <p>Cereales y oleaginosas se extienden por las llanuras fértiles de Buenos Aires, Santa Fe, Córdoba y La Pampa.</p>
+        <span class="cultivo-tipo">Granos y oleaginosas</span>
+      </article>
+      <article class="cultivo-card cultivo-card-vid">
+        <div class="cultivo-icon"><i class="fa-solid fa-wine-bottle" aria-hidden="true"></i></div>
+        <span class="cultivo-region">Cuyo</span>
+        <h3>Vid y olivo</h3>
+        <p>Los oasis irrigados de Mendoza y San Juan son reconocidos por sus viñedos, sus vinos y la producción de aceitunas.</p>
+        <span class="cultivo-tipo">Vitivinicultura</span>
+      </article>
+      <article class="cultivo-card cultivo-card-fruta">
+        <div class="cultivo-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
+        <span class="cultivo-region">Valles patagónicos</span>
+        <h3>Peras y manzanas</h3>
+        <p>El riego de los valles de Río Negro y Neuquén permite producir fruta de pepita, además de cerezas y frutas finas.</p>
+        <span class="cultivo-tipo">Fruticultura</span>
+      </article>
+      <article class="cultivo-card cultivo-card-industrial">
+        <div class="cultivo-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+        <span class="cultivo-region">NEA y NOA</span>
+        <h3>Yerba mate y caña de azúcar</h3>
+        <p>El clima subtropical acompaña la yerba mate y el té en el noreste, y la caña de azúcar en Tucumán y Jujuy.</p>
+        <span class="cultivo-tipo">Cultivos regionales</span>
+      </article>
+    </section>
+
+    <aside class="cultivos-note">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <p>La producción puede variar según la temporada y las condiciones de cada año. Visitá <a href="index.html">Provincias</a> para conocer más ejemplos por jurisdicción.</p>
+    </aside>
+  </main>
+
+    <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-title"><i class="fa-solid fa-seedling"></i><span>Somos Argentina</span></div>
+       
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="index.html">Inicio · Provincias</a></li>
+          <li><a href="cultivos.html">Cultivos</a></li>
+          <li><a href="regiones.html">Regiones</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Fuente de datos</h4>
+        <p>API Georef Argentina (<code>apis.datos.gob.ar</code>) + catálogo de cultivos emblemáticos.</p>
+        <div class="footer-socials" aria-label="Enlaces del proyecto">
+          <a href="index.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+          <a href="cultivos.html" title="Cultivos"><i class="fa-solid fa-wheat-awn"></i></a>
+          <a href="regiones.html" title="Regiones"><i class="fa-solid fa-earth-americas"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

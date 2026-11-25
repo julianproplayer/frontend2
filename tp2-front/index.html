@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somos Argentina — Cultivos por excelencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-left">
+      <button id="btn-menu-sidebar" class="btn-icon-menu" aria-label="Abrir índice de provincias" title="Índice de provincias">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="index.html" class="brand-logo">
+        <img src="img/logo.svg" alt="Logo Somos Argentina" class="brand-logo-img" />
+        <span class="brand-text">Somos <strong>Argentina</strong></span>
+      </a>
+      <nav class="main-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-map-location-dot"></i> Provincias</a>
+        <a href="cultivos.html" class="nav-link"><i class="fa-solid fa-wheat-awn"></i> Cultivos</a>
+        <a href="regiones.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> Regiones</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <span class="api-pill" title="Datos geográficos vía API Georef AR">
+        <i class="fa-solid fa-circle-nodes"></i> Georef AR
+      </span>
+    </div>
+  </header>
+
+  <div class="workspace-layout">
+    <aside id="sidebar-provincias" class="sidebar-index" aria-label="Índice de provincias argentinas">
+      <div class="sidebar-header">
+        <h2><i class="fa-solid fa-list-ul"></i> Provincias (24)</h2>
+        <button id="btn-cerrar-sidebar" class="btn-close-sidebar" aria-label="Cerrar menú">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Enlaces de navegación visibles en el menú hamburguesa (mobile/tablet) -->
+      <nav class="mobile-nav-links" aria-label="Secciones en menú móvil">
+        <a href="index.html" class="mobile-nav-link active"><i class="fa-solid fa-map-location-dot"></i> Provincias</a>
+        <a href="cultivos.html" class="mobile-nav-link"><i class="fa-solid fa-wheat-awn"></i> Cultivos</a>
+        <a href="regiones.html" class="mobile-nav-link"><i class="fa-solid fa-layer-group"></i> Regiones</a>
+      </nav>
+
+      <ul id="lista-indice-provincias" class="sidebar-list">
+        <li class="sidebar-loading">Cargando índice...</li>
+      </ul>
+    </aside>
+
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <main class="main-content">
+      <section class="hero-banner">
+        <div class="hero-content">
+          <span class="hero-kicker"><i class="fa-solid fa-sun"></i> Referencia Productiva Federal</span>
+          <h1>Cultivos por excelencia de <span>Argentina</span></h1>
+          <p>Explorá las 24 jurisdicciones del país consultando la API oficial de provincias y descubrí el cultivo o producción agrícola emblemática que distingue a cada territorio.</p>
+          <div class="controles-busqueda">
+            <div class="input-buscador">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" id="buscador-provincia" placeholder="Buscar por provincia o cultivo (ej: Mendoza, Vid, Soja)..." aria-label="Buscar por provincia o cultivo" />
+            </div>
+            <select id="filtro-categoria" class="select-categoria" aria-label="Filtrar por categoría">
+              <option value="TODAS">Todas las categorías</option>
+              <option value="Granos y oleaginosas">Granos y oleaginosas</option>
+              <option value="Vitivinicultura">Vitivinicultura</option>
+              <option value="Fruticultura">Fruticultura</option>
+              <option value="Cultivos industriales">Cultivos industriales</option>
+              <option value="Economía regional">Economía regional</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-bar" aria-live="polite">
+        <div id="estado-carga" class="estado-texto"><i class="fa-solid fa-spinner fa-spin"></i> Consultando API de provincias de Argentina...</div>
+        <div id="contador-resultados" class="contador-resultados"></div>
+      </section>
+
+      <section class="provincias-section">
+        <div id="contenedor-provincias" class="provincias-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-title"><i class="fa-solid fa-seedling"></i><span>Somos Argentina</span></div>
+       
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="index.html">Inicio · Provincias</a></li>
+          <li><a href="cultivos.html">Cultivos</a></li>
+          <li><a href="regiones.html">Regiones</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Fuente de datos</h4>
+        <p>API Georef Argentina (<code>apis.datos.gob.ar</code>) + catálogo de cultivos emblemáticos.</p>
+        <div class="footer-socials" aria-label="Enlaces del proyecto">
+          <a href="index.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+          <a href="cultivos.html" title="Cultivos"><i class="fa-solid fa-wheat-awn"></i></a>
+          <a href="regiones.html" title="Regiones"><i class="fa-solid fa-earth-americas"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
